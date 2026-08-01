@@ -1,19 +1,19 @@
 {
-  "version": "0.1.7",
+  "version": "0.1.8",
   "force": false,
   "notes": "福宝控制台自动构建发布包。",
   "packages": {
     "windows": {
-      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.7/fubao-console-0.1.7-windows-x64-setup.exe",
-      "filename": "fubao-console-0.1.7-windows-x64-setup.exe",
-      "sha256": "1285b4720352834c2d2d5443d054026db6a6325ac8b7ad7ef0853d52a6a7a0e8",
-      "size": 6246330
+      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.8/fubao-console-0.1.8-windows-x64-setup.exe",
+      "filename": "fubao-console-0.1.8-windows-x64-setup.exe",
+      "sha256": "a38c1547a89eb3ea3b45d506fe61907438f7db88874dbc20aa8ff58cd6d760f8",
+      "size": 6244809
     },
     "macos": {
-      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.7/fubao-console-0.1.7-macos-universal.dmg",
-      "filename": "fubao-console-0.1.7-macos-universal.dmg",
-      "sha256": "dd9f516ceddccf44530883b5aec5e1f4d81a73fcd8762598ea6d859a0870d21e",
-      "size": 16990766
+      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.8/fubao-console-0.1.8-macos-universal.dmg",
+      "filename": "fubao-console-0.1.8-macos-universal.dmg",
+      "sha256": "332c75d13444d2e2a9a309c01e528d4ca901f649d6a303d652ced3febda127de",
+      "size": 16991934
     }
   }
 }

@@ -1,19 +1,19 @@
 {
-  "version": "0.1.11",
+  "version": "0.1.12",
   "force": false,
   "notes": "福宝控制台自动构建发布包。",
   "packages": {
     "windows": {
-      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.11/fubao-console-0.1.11-windows-x64-setup.exe",
-      "filename": "fubao-console-0.1.11-windows-x64-setup.exe",
-      "sha256": "52e526e5f0b1ac6813bee1e93a59d2f0301ed9211b7283240807d3252cadb685",
-      "size": 6304462
+      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.12/fubao-console-0.1.12-windows-x64-setup.exe",
+      "filename": "fubao-console-0.1.12-windows-x64-setup.exe",
+      "sha256": "045473c91f6e2db4e001ed3f1bd43ee9c6e523b78e850f5bce571b393bf3fc21",
+      "size": 6305458
     },
     "macos": {
-      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.11/fubao-console-0.1.11-macos-universal.dmg",
-      "filename": "fubao-console-0.1.11-macos-universal.dmg",
-      "sha256": "05bd263809c9788f82c53bae36f4eca82687b89f4300bf372878a7e533dbd156",
-      "size": 17139704
+      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.12/fubao-console-0.1.12-macos-universal.dmg",
+      "filename": "fubao-console-0.1.12-macos-universal.dmg",
+      "sha256": "69b5b0881c9492edaa929f843e9870c6478250a457db9afd8356efd6e1a9fb9d",
+      "size": 17147443
     }
   }
 }

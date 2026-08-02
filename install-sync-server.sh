@@ -39,7 +39,7 @@ case "$(uname -m)" in
 esac
 
 apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates curl gpg python3 tar openssl debian-keyring debian-archive-keyring apt-transport-https
+DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates curl gpg python3 tar openssl sqlite3 debian-keyring debian-archive-keyring apt-transport-https
 
 if ! command -v caddy >/dev/null 2>&1; then
 	curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
@@ -139,6 +139,15 @@ $DOMAIN {
 		health_timeout 3s
 	}
 }
+
+https://$DOMAIN:8087 {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:8788 {
+		health_uri /healthz
+		health_interval 30s
+		health_timeout 3s
+	}
+}
 CADDY
 
 CADDY_BACKUP=""
@@ -162,8 +171,18 @@ fi
 
 systemctl daemon-reload
 systemctl enable --now "$SERVICE_NAME"
-systemctl enable --now caddy
-systemctl reload caddy
+if ! systemctl enable --now caddy; then
+	systemctl status caddy --no-pager -l >&2 || true
+	journalctl -u caddy --no-pager -n 50 >&2 || true
+	echo "Caddy 启动失败；请检查 80、443、8087 端口占用和上方日志。" >&2
+	exit 1
+fi
+if ! systemctl reload caddy; then
+	systemctl status caddy --no-pager -l >&2 || true
+	journalctl -u caddy --no-pager -n 50 >&2 || true
+	echo "Caddy 重载失败；请检查上方日志。" >&2
+	exit 1
+fi
 
 for ATTEMPT in 1 2 3 4 5 6 7 8 9 10; do
 	if curl --fail --silent --show-error http://127.0.0.1:8788/healthz >/dev/null; then
@@ -180,6 +199,7 @@ done
 echo ""
 echo "福宝同步服务 $VERSION 安装完成。"
 echo "服务地址：https://$DOMAIN/api/v1"
+echo "备用地址：https://$DOMAIN:8087/api/v1"
 echo "客户端注册令牌：$(cat "$CONFIG_DIR/enrollment.token")"
 echo ""
-echo "请确认 $DOMAIN 的 A/AAAA 记录已指向本机，并开放 TCP 80、443。"
+echo "请确认 $DOMAIN 的 A/AAAA 记录已指向本机，并开放 TCP 80、443、8087。"

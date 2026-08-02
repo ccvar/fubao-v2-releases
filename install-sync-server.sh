@@ -78,7 +78,6 @@ PY
 curl --fail --silent --show-error --location "$ASSET_URL" --output "$TEMP_DIR/server.tar.gz"
 printf '%s  %s\n' "$ASSET_SHA256" "$TEMP_DIR/server.tar.gz" | sha256sum --check --status
 tar -xzf "$TEMP_DIR/server.tar.gz" -C "$TEMP_DIR"
-install -m 0755 "$TEMP_DIR/fubao-sync-server" "$INSTALL_DIR/fubao-sync-server"
 
 if ! getent group "$SERVICE_USER" >/dev/null 2>&1; then
 	groupadd --system "$SERVICE_USER"
@@ -89,9 +88,26 @@ fi
 install -d -m 0750 -o "$SERVICE_USER" -g "$SERVICE_USER" "$DATA_DIR"
 install -d -m 0750 -o root -g "$SERVICE_USER" "$CONFIG_DIR"
 
+UPGRADING="false"
+if [ -f "$INSTALL_DIR/fubao-sync-server" ]; then
+	UPGRADING="true"
+fi
+if [ -s "$DATA_DIR/fubao-sync.db" ]; then
+	BACKUP_DIR="$DATA_DIR/backups"
+	BACKUP_PATH="$BACKUP_DIR/fubao-sync-before-$VERSION-$(date +%Y%m%d-%H%M%S).db"
+	install -d -m 0750 -o "$SERVICE_USER" -g "$SERVICE_USER" "$BACKUP_DIR"
+	sqlite3 "$DATA_DIR/fubao-sync.db" ".backup '$BACKUP_PATH'"
+	chown "$SERVICE_USER:$SERVICE_USER" "$BACKUP_PATH"
+	chmod 0640 "$BACKUP_PATH"
+fi
+install -m 0755 "$TEMP_DIR/fubao-sync-server" "$INSTALL_DIR/fubao-sync-server.new"
+mv -f "$INSTALL_DIR/fubao-sync-server.new" "$INSTALL_DIR/fubao-sync-server"
+
+TOKEN_CREATED="false"
 if [ ! -s "$CONFIG_DIR/enrollment.token" ]; then
 	umask 077
 	openssl rand -hex 32 > "$CONFIG_DIR/enrollment.token"
+	TOKEN_CREATED="true"
 fi
 chown root:"$SERVICE_USER" "$CONFIG_DIR/enrollment.token"
 chmod 0640 "$CONFIG_DIR/enrollment.token"
@@ -170,7 +186,8 @@ if ! caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile; then
 fi
 
 systemctl daemon-reload
-systemctl enable --now "$SERVICE_NAME"
+systemctl enable "$SERVICE_NAME"
+systemctl restart "$SERVICE_NAME"
 if ! systemctl enable --now caddy; then
 	systemctl status caddy --no-pager -l >&2 || true
 	journalctl -u caddy --no-pager -n 50 >&2 || true
@@ -197,9 +214,17 @@ for ATTEMPT in 1 2 3 4 5 6 7 8 9 10; do
 done
 
 echo ""
-echo "福宝同步服务 $VERSION 安装完成。"
+if [ "$UPGRADING" = "true" ]; then
+	echo "福宝同步服务已升级到 $VERSION。"
+else
+	echo "福宝同步服务 $VERSION 安装完成。"
+fi
 echo "服务地址：https://$DOMAIN/api/v1"
 echo "备用地址：https://$DOMAIN:8087/api/v1"
-echo "客户端注册令牌：$(cat "$CONFIG_DIR/enrollment.token")"
+if [ "$TOKEN_CREATED" = "true" ]; then
+	echo "客户端注册令牌：$(cat "$CONFIG_DIR/enrollment.token")"
+else
+	echo "已保留现有客户端注册令牌：$CONFIG_DIR/enrollment.token"
+fi
 echo ""
 echo "请确认 $DOMAIN 的 A/AAAA 记录已指向本机，并开放 TCP 80、443、8087。"

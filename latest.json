@@ -1,34 +1,34 @@
 {
-  "version": "0.1.30",
+  "version": "0.1.31",
   "notes": "福宝控制台自动构建发布包。",
   "force": false,
-  "pub_date": "2026-08-04T06:55:43Z",
+  "pub_date": "2026-08-04T07:30:26Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.30/fubao-console-0.1.30-macos-universal.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTVVBWaEdYRzVQb2RROXE4b3pnektaV2xNYkJaYXNITzBoVlMyKzhsa1BVUXJKNnVvVG01M2FseXhSbUpoVHU4T0cwd2NFOFF2TzVJdkxQSStOUXpXbFFtS1ErWUFPaXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODI2NDg3CWZpbGU656aP5a6d5o6n5Yi25Y+wLmFwcC50YXIuZ3oKdXlRUHlOejYrWnpueitpSm9rOWl5cFVaaWRDNTJ3V3pXeW9RcTluYXB5cFF1WjVYcDcySUJKMnAxSXEyN3JzeStCWkdLNUc0MGVibnYyTEpQWE1GREE9PQo="
+      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.31/fubao-console-0.1.31-macos-universal.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTVVBWaEdYRzVQb2MwWTNJaFo5TWxnSVUrdWJsZTJEaTBFbXR5Sk5WMm91UGUxU3JXMlNOTXdzL3laTllBY01lcXVrTmRUK3lGN2ZxTkhXRGQxWXdRT3EzL1B5RXQ3R0EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODI4NDg3CWZpbGU656aP5a6d5o6n5Yi25Y+wLmFwcC50YXIuZ3oKV3M1YjEzenRyd0VXZ094T1dCVWhVYmMwa1pBd3VYUlNjNWxHVlN4emp6dUJLMVk5OFhKdmg1enprbjUvcC82WXdwbG5Ib3ZMemRXT0IvTlNvRERFQlE9PQo="
     },
     "darwin-x86_64": {
-      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.30/fubao-console-0.1.30-macos-universal.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTVVBWaEdYRzVQb2RROXE4b3pnektaV2xNYkJaYXNITzBoVlMyKzhsa1BVUXJKNnVvVG01M2FseXhSbUpoVHU4T0cwd2NFOFF2TzVJdkxQSStOUXpXbFFtS1ErWUFPaXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODI2NDg3CWZpbGU656aP5a6d5o6n5Yi25Y+wLmFwcC50YXIuZ3oKdXlRUHlOejYrWnpueitpSm9rOWl5cFVaaWRDNTJ3V3pXeW9RcTluYXB5cFF1WjVYcDcySUJKMnAxSXEyN3JzeStCWkdLNUc0MGVibnYyTEpQWE1GREE9PQo="
+      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.31/fubao-console-0.1.31-macos-universal.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTVVBWaEdYRzVQb2MwWTNJaFo5TWxnSVUrdWJsZTJEaTBFbXR5Sk5WMm91UGUxU3JXMlNOTXdzL3laTllBY01lcXVrTmRUK3lGN2ZxTkhXRGQxWXdRT3EzL1B5RXQ3R0EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODI4NDg3CWZpbGU656aP5a6d5o6n5Yi25Y+wLmFwcC50YXIuZ3oKV3M1YjEzenRyd0VXZ094T1dCVWhVYmMwa1pBd3VYUlNjNWxHVlN4emp6dUJLMVk5OFhKdmg1enprbjUvcC82WXdwbG5Ib3ZMemRXT0IvTlNvRERFQlE9PQo="
     },
     "windows-x86_64": {
-      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.30/fubao-console-0.1.30-windows-x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTVVBWaEdYRzVQb1JyeEwzTjhJNmpkbG9qZWJkaUlxcWJMSDh0dEpIT0VOeFRSNTVMVEdvYWdIL3k4WldZb0FOdlM5M0c0Y2tjNWpuWlBCWnFjSXh4dkxjYmoyTXdjUlFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODI2NTIzCWZpbGU656aP5a6d5o6n5Yi25Y+wXzAuMS4zMF94NjQtc2V0dXAuZXhlCmNvN2JGaGxJSVQwUmNzQUVBNU1qWmVmN0FHTmlyU1RRK1ZwK0JHU1VCSCtndlZkZ0d6KzJVY0toaUw1R0k0eUR4R2xCcEphemZzSVlETkRSaDNtdUJBPT0K"
+      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.31/fubao-console-0.1.31-windows-x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTVVBWaEdYRzVQb1dOT2dqdzUrWGsxNHgzeGNNcFN4VWJuSjZaNTE1R2F5cmdnOEFMQ1FtWHZady82bi8xYlZpQTJRdEhSa05KcmtXTUhsdnY2ekxROGVFUUlJWUplbGdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg1ODI4NTk2CWZpbGU656aP5a6d5o6n5Yi25Y+wXzAuMS4zMV94NjQtc2V0dXAuZXhlCkJJOWhHeElHMEF6UXRpVXQzWW9RS2FwYmM0QVZ0aTc0L3FMZjdJbHF4bXlEY3ZRcEJYVjlYdmxrS01RdllqRytvbW1LS2ZXQW0zRUpvcGRzTis2d0NBPT0K"
     }
   },
   "packages": {
     "macos": {
-      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.30/fubao-console-0.1.30-macos-universal.dmg",
-      "filename": "fubao-console-0.1.30-macos-universal.dmg",
-      "sha256": "b32a4466c439d1b4aa1268913d95f0517e82f4b0744c50f2ce26a8ab26f1938b",
-      "size": 18486089
+      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.31/fubao-console-0.1.31-macos-universal.dmg",
+      "filename": "fubao-console-0.1.31-macos-universal.dmg",
+      "sha256": "d166b4547f12bb5ee7c28071219b7a7cf81901f30a7148b51eba44453b14a614",
+      "size": 18486086
     },
     "windows": {
-      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.30/fubao-console-0.1.30-windows-x64-setup.exe",
-      "filename": "fubao-console-0.1.30-windows-x64-setup.exe",
-      "sha256": "2616b78948a5de3f3ae183a1fc5d9724dd4309e478388d34e6b8207211063227",
-      "size": 6577267
+      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/v0.1.31/fubao-console-0.1.31-windows-x64-setup.exe",
+      "filename": "fubao-console-0.1.31-windows-x64-setup.exe",
+      "sha256": "8e97a1bbbc65bcc9257ac200ffd7a33416b88d9a1982f32676814631b1e32ac7",
+      "size": 6582241
     }
   }
 }

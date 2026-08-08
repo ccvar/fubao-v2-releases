@@ -1,18 +1,18 @@
 {
-  "version": "1.3.0",
-  "tag": "server-v1.3.0",
+  "version": "1.3.1",
+  "tag": "server-v1.3.1",
   "assets": {
     "linux-amd64": {
-      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/server-v1.3.0/fubao-sync-server-1.3.0-linux-amd64.tar.gz",
-      "filename": "fubao-sync-server-1.3.0-linux-amd64.tar.gz",
-      "sha256": "07883c5a2d5cefefe27f1e35f17f8424e53ee8214432d5962c173835666623c3",
-      "size": 4413470
+      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/server-v1.3.1/fubao-sync-server-1.3.1-linux-amd64.tar.gz",
+      "filename": "fubao-sync-server-1.3.1-linux-amd64.tar.gz",
+      "sha256": "5506e611fbeae9bf314c8bb919c9239b71cf31db0629d890490c2ab53d36c588",
+      "size": 4414497
     },
     "linux-arm64": {
-      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/server-v1.3.0/fubao-sync-server-1.3.0-linux-arm64.tar.gz",
-      "filename": "fubao-sync-server-1.3.0-linux-arm64.tar.gz",
-      "sha256": "2970ac515b4a4386c9721aaffee150de81673f10c30cb8d1ff641c6c511757cb",
-      "size": 4087731
+      "url": "https://github.com/ccvar/fubao-v2-releases/releases/download/server-v1.3.1/fubao-sync-server-1.3.1-linux-arm64.tar.gz",
+      "filename": "fubao-sync-server-1.3.1-linux-arm64.tar.gz",
+      "sha256": "f9407fa1fb4069ee55e0dd7a621359c97a7f1484a53c095ecc737c0e8f6c0da0",
+      "size": 4090358
     }
   }
 }
